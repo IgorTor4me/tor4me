@@ -1,0 +1,1209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_9EED4C_tor4meserverModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="business">
+          <Key>
+            <PropertyRef Name="busid" />
+          </Key>
+          <Property Name="busid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bus_f_name" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="bushas_active_account" Type="tinyint" Nullable="false" />
+          <Property Name="buslinkweb" Type="text" Nullable="false" />
+          <Property Name="busdescr" Type="text" Nullable="false" />
+          <Property Name="buscity" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="busstreet" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="bushousenum" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="busphone1" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="busphone2" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="busmobile1" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="busmobile2" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="busfax1" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="busfax2" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="busemail" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="buscurrent_contract_id" Type="int" Nullable="false" />
+          <Property Name="busudf_text1" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="busudf_text2" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="busudf_text3" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="busudf_text4" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="busudf_text5" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="busudf_integer1" Type="int" Nullable="false" />
+          <Property Name="busudf_integer2" Type="int" Nullable="false" />
+          <Property Name="busudf_integer3" Type="int" Nullable="false" />
+          <Property Name="busudf_integer4" Type="int" Nullable="false" />
+          <Property Name="busudf_integer5" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="business_contract">
+          <Key>
+            <PropertyRef Name="bcnbusid" />
+            <PropertyRef Name="bcnconid" />
+          </Key>
+          <Property Name="bcnbusid" Type="bigint" Nullable="false" />
+          <Property Name="bcnconid" Type="bigint" Nullable="false" />
+          <Property Name="bcnactive" Type="tinyint" Nullable="false" />
+          <Property Name="bcnbegindate" Type="date" />
+          <Property Name="bcnenddate" Type="date" />
+          <Property Name="bcnnotes" Type="text" Nullable="false" />
+          <Property Name="bcnudf_text1" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="bcnudf_text2" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="bcnudf_text3" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="bcnudf_text4" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="bcnudf_text5" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="bcnudf_integer1" Type="int" Nullable="false" />
+          <Property Name="bcnudf_integer2" Type="int" Nullable="false" />
+          <Property Name="bcnudf_integer3" Type="int" Nullable="false" />
+          <Property Name="bcnudf_integer4" Type="int" Nullable="false" />
+          <Property Name="bcnudf_integer5" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="contract">
+          <Key>
+            <PropertyRef Name="conid" />
+          </Key>
+          <Property Name="conid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="conname" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="conshortdescr" Type="text" Nullable="false" />
+          <Property Name="conlongdescr" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="conprice" Type="int" Nullable="false" />
+          <Property Name="conactive" Type="tinyint" Nullable="false" />
+          <Property Name="concreateday" Type="date" />
+          <Property Name="conupdateday" Type="date" />
+          <Property Name="conendday" Type="date" />
+          <Property Name="conudf_text1" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="conudf_text2" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="conudf_text3" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="conudf_text4" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="conudf_text5" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="conudf_integer1" Type="int" Nullable="false" />
+          <Property Name="conudf_integer2" Type="int" Nullable="false" />
+          <Property Name="conudf_integer3" Type="int" Nullable="false" />
+          <Property Name="conudf_integer4" Type="int" Nullable="false" />
+          <Property Name="conudf_integer5" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="cusid" />
+            <PropertyRef Name="cusbusid" />
+          </Key>
+          <Property Name="cusid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cusbusid" Type="bigint" Nullable="false" />
+          <Property Name="cusname" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="cuslastname" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="cusphone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="cusemail" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="cusudf_text1" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="cusudf_text2" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="cusudf_text3" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="cusudf_text4" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="cusudf_text5" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="cusudf_integer1" Type="int" Nullable="false" />
+          <Property Name="cusudf_integer2" Type="int" Nullable="false" />
+          <Property Name="cusudf_integer3" Type="int" Nullable="false" />
+          <Property Name="cusudf_integer4" Type="int" Nullable="false" />
+          <Property Name="cusudf_integer5" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="executers">
+          <Key>
+            <PropertyRef Name="exeid" />
+            <PropertyRef Name="exebusid" />
+          </Key>
+          <Property Name="exeid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="exebusid" Type="bigint" Nullable="false" />
+          <Property Name="exename" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="exelastname" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="execalenar" Type="varchar" MaxLength="45" />
+          <Property Name="exeudf_text1" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="exeudf_text2" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="exeudf_text3" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="exeudf_text4" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="exeudf_text5" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="exeudf_integer1" Type="int" Nullable="false" />
+          <Property Name="exeudf_integer2" Type="int" Nullable="false" />
+          <Property Name="exeudf_integer3" Type="int" Nullable="false" />
+          <Property Name="exeudf_integer4" Type="int" Nullable="false" />
+          <Property Name="exeudf_integer5" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="ordid" />
+            <PropertyRef Name="ordexeid" />
+            <PropertyRef Name="ordbusid" />
+            <PropertyRef Name="ordservid" />
+            <PropertyRef Name="ordcusid" />
+          </Key>
+          <Property Name="ordid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ordexeid" Type="bigint" Nullable="false" />
+          <Property Name="ordbusid" Type="bigint" Nullable="false" />
+          <Property Name="ordservid" Type="bigint" Nullable="false" />
+          <Property Name="ordcusbusid" Type="bigint" Nullable="false" />
+          <Property Name="ordcusid" Type="bigint" Nullable="false" />
+          <Property Name="ordstatus" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="ordopendate" Type="date" Nullable="false" />
+          <Property Name="ordopentime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="ordnotes" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="ordudf_text1" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="ordudf_text2" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="ordudf_text3" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="ordudf_text4" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="ordudf_text5" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="ordudf_integer1" Type="int" Nullable="false" />
+          <Property Name="ordudf_integer2" Type="int" Nullable="false" />
+          <Property Name="ordudf_integer3" Type="int" Nullable="false" />
+          <Property Name="ordudf_integer4" Type="int" Nullable="false" />
+          <Property Name="ordudf_integer5" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="service">
+          <Key>
+            <PropertyRef Name="servid" />
+          </Key>
+          <Property Name="servid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="servname" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="servduration" Type="int" Nullable="false" />
+          <Property Name="servdescr" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="servudf_text1" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="servudf_text2" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="servudf_text3" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="servudf_text4" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="servudf_text5" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="servudf_integer1" Type="int" Nullable="false" />
+          <Property Name="servudf_integer2" Type="int" Nullable="false" />
+          <Property Name="servudf_integer3" Type="int" Nullable="false" />
+          <Property Name="servudf_integer4" Type="int" Nullable="false" />
+          <Property Name="servudf_integer5" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="service_executers">
+          <Key>
+            <PropertyRef Name="sexexeid" />
+            <PropertyRef Name="sexbusid" />
+            <PropertyRef Name="sexservid" />
+          </Key>
+          <Property Name="sexexeid" Type="bigint" Nullable="false" />
+          <Property Name="sexbusid" Type="bigint" Nullable="false" />
+          <Property Name="sexservid" Type="bigint" Nullable="false" />
+          <Property Name="sexudf_text1" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="sexudf_text2" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="sexudf_text3" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="sexudf_text4" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="sexudf_text5" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="sexudf_integer1" Type="int" Nullable="false" />
+          <Property Name="sexudf_integer2" Type="int" Nullable="false" />
+          <Property Name="sexudf_integer3" Type="int" Nullable="false" />
+          <Property Name="sexudf_integer4" Type="int" Nullable="false" />
+          <Property Name="sexudf_integer5" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_business_contract">
+          <End Role="business" Type="Self.business" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="business_contract" Type="Self.business_contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="business">
+              <PropertyRef Name="busid" />
+            </Principal>
+            <Dependent Role="business_contract">
+              <PropertyRef Name="bcnbusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_business_contract2">
+          <End Role="contract" Type="Self.contract" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="business_contract" Type="Self.business_contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contract">
+              <PropertyRef Name="conid" />
+            </Principal>
+            <Dependent Role="business_contract">
+              <PropertyRef Name="bcnconid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_business_customer">
+          <End Role="business" Type="Self.business" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="customer" Type="Self.customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="business">
+              <PropertyRef Name="busid" />
+            </Principal>
+            <Dependent Role="customer">
+              <PropertyRef Name="cusbusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_business_executor">
+          <End Role="business" Type="Self.business" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="executers" Type="Self.executers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="business">
+              <PropertyRef Name="busid" />
+            </Principal>
+            <Dependent Role="executers">
+              <PropertyRef Name="exebusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="cusid" />
+              <PropertyRef Name="cusbusid" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="ordcusid" />
+              <PropertyRef Name="ordcusbusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_service_executer_execoters">
+          <End Role="executers" Type="Self.executers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="service_executers" Type="Self.service_executers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="executers">
+              <PropertyRef Name="exeid" />
+              <PropertyRef Name="exebusid" />
+            </Principal>
+            <Dependent Role="service_executers">
+              <PropertyRef Name="sexexeid" />
+              <PropertyRef Name="sexbusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_service_executer_service">
+          <End Role="service" Type="Self.service" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="service_executers" Type="Self.service_executers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="service">
+              <PropertyRef Name="servid" />
+            </Principal>
+            <Dependent Role="service_executers">
+              <PropertyRef Name="sexservid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_9EED4C_tor4meserverModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="business" EntityType="Self.business" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="business_contract" EntityType="Self.business_contract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contract" EntityType="Self.contract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="executers" EntityType="Self.executers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="orders" EntityType="Self.orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="service" EntityType="Self.service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="service_executers" EntityType="Self.service_executers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_business_contract" Association="Self.FK_business_contract">
+            <End Role="business" EntitySet="business" />
+            <End Role="business_contract" EntitySet="business_contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_business_contract2" Association="Self.FK_business_contract2">
+            <End Role="contract" EntitySet="contract" />
+            <End Role="business_contract" EntitySet="business_contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_business_customer" Association="Self.FK_business_customer">
+            <End Role="business" EntitySet="business" />
+            <End Role="customer" EntitySet="customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_business_executor" Association="Self.FK_business_executor">
+            <End Role="business" EntitySet="business" />
+            <End Role="executers" EntitySet="executers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_customer" Association="Self.FK_order_customer">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_executer_execoters" Association="Self.FK_service_executer_execoters">
+            <End Role="executers" EntitySet="executers" />
+            <End Role="service_executers" EntitySet="service_executers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_executer_service" Association="Self.FK_service_executer_service">
+            <End Role="service" EntitySet="service" />
+            <End Role="service_executers" EntitySet="service_executers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_9EED4C_tor4meserverModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="business">
+          <Key>
+            <PropertyRef Name="busid" />
+          </Key>
+          <Property Name="busid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bus_f_name" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bushas_active_account" Type="Byte" Nullable="false" />
+          <Property Name="buslinkweb" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busdescr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="buscity" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busstreet" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bushousenum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busphone1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busphone2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busmobile1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busmobile2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busfax1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busfax2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busemail" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="buscurrent_contract_id" Type="Int32" Nullable="false" />
+          <Property Name="busudf_text1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busudf_text2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busudf_text3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busudf_text4" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busudf_text5" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="busudf_integer1" Type="Int32" Nullable="false" />
+          <Property Name="busudf_integer2" Type="Int32" Nullable="false" />
+          <Property Name="busudf_integer3" Type="Int32" Nullable="false" />
+          <Property Name="busudf_integer4" Type="Int32" Nullable="false" />
+          <Property Name="busudf_integer5" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="business_contract" Relationship="Self.FK_business_contract" FromRole="business" ToRole="business_contract" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_business_customer" FromRole="business" ToRole="customer" />
+          <NavigationProperty Name="executers" Relationship="Self.FK_business_executor" FromRole="business" ToRole="executers" />
+        </EntityType>
+        <EntityType Name="business_contract">
+          <Key>
+            <PropertyRef Name="bcnbusid" />
+            <PropertyRef Name="bcnconid" />
+          </Key>
+          <Property Name="bcnbusid" Type="Int64" Nullable="false" />
+          <Property Name="bcnconid" Type="Int64" Nullable="false" />
+          <Property Name="bcnactive" Type="Byte" Nullable="false" />
+          <Property Name="bcnbegindate" Type="DateTime" Precision="0" />
+          <Property Name="bcnenddate" Type="DateTime" Precision="0" />
+          <Property Name="bcnnotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bcnudf_text1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bcnudf_text2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bcnudf_text3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bcnudf_text4" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bcnudf_text5" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bcnudf_integer1" Type="Int32" Nullable="false" />
+          <Property Name="bcnudf_integer2" Type="Int32" Nullable="false" />
+          <Property Name="bcnudf_integer3" Type="Int32" Nullable="false" />
+          <Property Name="bcnudf_integer4" Type="Int32" Nullable="false" />
+          <Property Name="bcnudf_integer5" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="business" Relationship="Self.FK_business_contract" FromRole="business_contract" ToRole="business" />
+          <NavigationProperty Name="contract" Relationship="Self.FK_business_contract2" FromRole="business_contract" ToRole="contract" />
+        </EntityType>
+        <EntityType Name="contract">
+          <Key>
+            <PropertyRef Name="conid" />
+          </Key>
+          <Property Name="conid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="conname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="conshortdescr" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="conlongdescr" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="conprice" Type="Int32" Nullable="false" />
+          <Property Name="conactive" Type="Byte" Nullable="false" />
+          <Property Name="concreateday" Type="DateTime" Precision="0" />
+          <Property Name="conupdateday" Type="DateTime" Precision="0" />
+          <Property Name="conendday" Type="DateTime" Precision="0" />
+          <Property Name="conudf_text1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="conudf_text2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="conudf_text3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="conudf_text4" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="conudf_text5" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="conudf_integer1" Type="Int32" Nullable="false" />
+          <Property Name="conudf_integer2" Type="Int32" Nullable="false" />
+          <Property Name="conudf_integer3" Type="Int32" Nullable="false" />
+          <Property Name="conudf_integer4" Type="Int32" Nullable="false" />
+          <Property Name="conudf_integer5" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="business_contract" Relationship="Self.FK_business_contract2" FromRole="contract" ToRole="business_contract" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="cusid" />
+            <PropertyRef Name="cusbusid" />
+          </Key>
+          <Property Name="cusid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cusbusid" Type="Int64" Nullable="false" />
+          <Property Name="cusname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cuslastname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cusphone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cusemail" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cusudf_text1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cusudf_text2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cusudf_text3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cusudf_text4" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cusudf_text5" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cusudf_integer1" Type="Int32" Nullable="false" />
+          <Property Name="cusudf_integer2" Type="Int32" Nullable="false" />
+          <Property Name="cusudf_integer3" Type="Int32" Nullable="false" />
+          <Property Name="cusudf_integer4" Type="Int32" Nullable="false" />
+          <Property Name="cusudf_integer5" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="business" Relationship="Self.FK_business_customer" FromRole="customer" ToRole="business" />
+          <NavigationProperty Name="orders" Relationship="Self.FK_order_customer" FromRole="customer" ToRole="orders" />
+        </EntityType>
+        <EntityType Name="executers">
+          <Key>
+            <PropertyRef Name="exeid" />
+            <PropertyRef Name="exebusid" />
+          </Key>
+          <Property Name="exeid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="exebusid" Type="Int64" Nullable="false" />
+          <Property Name="exename" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="exelastname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="execalenar" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="exeudf_text1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="exeudf_text2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="exeudf_text3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="exeudf_text4" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="exeudf_text5" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="exeudf_integer1" Type="Int32" Nullable="false" />
+          <Property Name="exeudf_integer2" Type="Int32" Nullable="false" />
+          <Property Name="exeudf_integer3" Type="Int32" Nullable="false" />
+          <Property Name="exeudf_integer4" Type="Int32" Nullable="false" />
+          <Property Name="exeudf_integer5" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="business" Relationship="Self.FK_business_executor" FromRole="executers" ToRole="business" />
+          <NavigationProperty Name="service_executers" Relationship="Self.FK_service_executer_execoters" FromRole="executers" ToRole="service_executers" />
+        </EntityType>
+        <EntityType Name="orders">
+          <Key>
+            <PropertyRef Name="ordid" />
+            <PropertyRef Name="ordexeid" />
+            <PropertyRef Name="ordbusid" />
+            <PropertyRef Name="ordservid" />
+            <PropertyRef Name="ordcusid" />
+          </Key>
+          <Property Name="ordid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ordexeid" Type="Int64" Nullable="false" />
+          <Property Name="ordbusid" Type="Int64" Nullable="false" />
+          <Property Name="ordservid" Type="Int64" Nullable="false" />
+          <Property Name="ordcusbusid" Type="Int64" Nullable="false" />
+          <Property Name="ordcusid" Type="Int64" Nullable="false" />
+          <Property Name="ordstatus" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ordopendate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ordopentime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="ordnotes" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ordudf_text1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ordudf_text2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ordudf_text3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ordudf_text4" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ordudf_text5" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ordudf_integer1" Type="Int32" Nullable="false" />
+          <Property Name="ordudf_integer2" Type="Int32" Nullable="false" />
+          <Property Name="ordudf_integer3" Type="Int32" Nullable="false" />
+          <Property Name="ordudf_integer4" Type="Int32" Nullable="false" />
+          <Property Name="ordudf_integer5" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_order_customer" FromRole="orders" ToRole="customer" />
+        </EntityType>
+        <EntityType Name="service">
+          <Key>
+            <PropertyRef Name="servid" />
+          </Key>
+          <Property Name="servid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="servname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="servduration" Type="Int32" Nullable="false" />
+          <Property Name="servdescr" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="servudf_text1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="servudf_text2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="servudf_text3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="servudf_text4" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="servudf_text5" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="servudf_integer1" Type="Int32" Nullable="false" />
+          <Property Name="servudf_integer2" Type="Int32" Nullable="false" />
+          <Property Name="servudf_integer3" Type="Int32" Nullable="false" />
+          <Property Name="servudf_integer4" Type="Int32" Nullable="false" />
+          <Property Name="servudf_integer5" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="service_executers" Relationship="Self.FK_service_executer_service" FromRole="service" ToRole="service_executers" />
+        </EntityType>
+        <EntityType Name="service_executers">
+          <Key>
+            <PropertyRef Name="sexexeid" />
+            <PropertyRef Name="sexbusid" />
+            <PropertyRef Name="sexservid" />
+          </Key>
+          <Property Name="sexexeid" Type="Int64" Nullable="false" />
+          <Property Name="sexbusid" Type="Int64" Nullable="false" />
+          <Property Name="sexservid" Type="Int64" Nullable="false" />
+          <Property Name="sexudf_text1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sexudf_text2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sexudf_text3" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sexudf_text4" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sexudf_text5" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sexudf_integer1" Type="Int32" Nullable="false" />
+          <Property Name="sexudf_integer2" Type="Int32" Nullable="false" />
+          <Property Name="sexudf_integer3" Type="Int32" Nullable="false" />
+          <Property Name="sexudf_integer4" Type="Int32" Nullable="false" />
+          <Property Name="sexudf_integer5" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="executers" Relationship="Self.FK_service_executer_execoters" FromRole="service_executers" ToRole="executers" />
+          <NavigationProperty Name="service" Relationship="Self.FK_service_executer_service" FromRole="service_executers" ToRole="service" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_business_contract">
+          <End Role="business" Type="Self.business" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="business_contract" Type="Self.business_contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="business">
+              <PropertyRef Name="busid" />
+            </Principal>
+            <Dependent Role="business_contract">
+              <PropertyRef Name="bcnbusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_business_customer">
+          <End Role="business" Type="Self.business" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="customer" Type="Self.customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="business">
+              <PropertyRef Name="busid" />
+            </Principal>
+            <Dependent Role="customer">
+              <PropertyRef Name="cusbusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_business_executor">
+          <End Role="business" Type="Self.business" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="executers" Type="Self.executers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="business">
+              <PropertyRef Name="busid" />
+            </Principal>
+            <Dependent Role="executers">
+              <PropertyRef Name="exebusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_business_contract2">
+          <End Role="contract" Type="Self.contract" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="business_contract" Type="Self.business_contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="contract">
+              <PropertyRef Name="conid" />
+            </Principal>
+            <Dependent Role="business_contract">
+              <PropertyRef Name="bcnconid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_order_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="orders" Type="Self.orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="cusid" />
+              <PropertyRef Name="cusbusid" />
+            </Principal>
+            <Dependent Role="orders">
+              <PropertyRef Name="ordcusid" />
+              <PropertyRef Name="ordcusbusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_service_executer_execoters">
+          <End Role="executers" Type="Self.executers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="service_executers" Type="Self.service_executers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="executers">
+              <PropertyRef Name="exeid" />
+              <PropertyRef Name="exebusid" />
+            </Principal>
+            <Dependent Role="service_executers">
+              <PropertyRef Name="sexexeid" />
+              <PropertyRef Name="sexbusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_service_executer_service">
+          <End Role="service" Type="Self.service" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="service_executers" Type="Self.service_executers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="service">
+              <PropertyRef Name="servid" />
+            </Principal>
+            <Dependent Role="service_executers">
+              <PropertyRef Name="sexservid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DB_9EED4C_tor4meserverEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+          <EntitySet Name="business" EntityType="Self.business" />
+          <EntitySet Name="business_contract" EntityType="Self.business_contract" />
+          <EntitySet Name="contract" EntityType="Self.contract" />
+          <EntitySet Name="customer" EntityType="Self.customer" />
+          <EntitySet Name="executers" EntityType="Self.executers" />
+          <EntitySet Name="orders" EntityType="Self.orders" />
+          <EntitySet Name="service" EntityType="Self.service" />
+          <EntitySet Name="service_executers" EntityType="Self.service_executers" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_business_contract" Association="Self.FK_business_contract">
+            <End Role="business" EntitySet="business" />
+            <End Role="business_contract" EntitySet="business_contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_business_customer" Association="Self.FK_business_customer">
+            <End Role="business" EntitySet="business" />
+            <End Role="customer" EntitySet="customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_business_executor" Association="Self.FK_business_executor">
+            <End Role="business" EntitySet="business" />
+            <End Role="executers" EntitySet="executers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_business_contract2" Association="Self.FK_business_contract2">
+            <End Role="contract" EntitySet="contract" />
+            <End Role="business_contract" EntitySet="business_contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_order_customer" Association="Self.FK_order_customer">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="orders" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_executer_execoters" Association="Self.FK_service_executer_execoters">
+            <End Role="executers" EntitySet="executers" />
+            <End Role="service_executers" EntitySet="service_executers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_executer_service" Association="Self.FK_service_executer_service">
+            <End Role="service" EntitySet="service" />
+            <End Role="service_executers" EntitySet="service_executers" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_9EED4C_tor4meserverModelStoreContainer" CdmEntityContainer="DB_9EED4C_tor4meserverEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.AspNetUserClaims">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.AspNetUserLogins">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="business">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.business">
+              <MappingFragment StoreEntitySet="business">
+                <ScalarProperty Name="busid" ColumnName="busid" />
+                <ScalarProperty Name="bus_f_name" ColumnName="bus_f_name" />
+                <ScalarProperty Name="bushas_active_account" ColumnName="bushas_active_account" />
+                <ScalarProperty Name="buslinkweb" ColumnName="buslinkweb" />
+                <ScalarProperty Name="busdescr" ColumnName="busdescr" />
+                <ScalarProperty Name="buscity" ColumnName="buscity" />
+                <ScalarProperty Name="busstreet" ColumnName="busstreet" />
+                <ScalarProperty Name="bushousenum" ColumnName="bushousenum" />
+                <ScalarProperty Name="busphone1" ColumnName="busphone1" />
+                <ScalarProperty Name="busphone2" ColumnName="busphone2" />
+                <ScalarProperty Name="busmobile1" ColumnName="busmobile1" />
+                <ScalarProperty Name="busmobile2" ColumnName="busmobile2" />
+                <ScalarProperty Name="busfax1" ColumnName="busfax1" />
+                <ScalarProperty Name="busfax2" ColumnName="busfax2" />
+                <ScalarProperty Name="busemail" ColumnName="busemail" />
+                <ScalarProperty Name="buscurrent_contract_id" ColumnName="buscurrent_contract_id" />
+                <ScalarProperty Name="busudf_text1" ColumnName="busudf_text1" />
+                <ScalarProperty Name="busudf_text2" ColumnName="busudf_text2" />
+                <ScalarProperty Name="busudf_text3" ColumnName="busudf_text3" />
+                <ScalarProperty Name="busudf_text4" ColumnName="busudf_text4" />
+                <ScalarProperty Name="busudf_text5" ColumnName="busudf_text5" />
+                <ScalarProperty Name="busudf_integer1" ColumnName="busudf_integer1" />
+                <ScalarProperty Name="busudf_integer2" ColumnName="busudf_integer2" />
+                <ScalarProperty Name="busudf_integer3" ColumnName="busudf_integer3" />
+                <ScalarProperty Name="busudf_integer4" ColumnName="busudf_integer4" />
+                <ScalarProperty Name="busudf_integer5" ColumnName="busudf_integer5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="business_contract">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.business_contract">
+              <MappingFragment StoreEntitySet="business_contract">
+                <ScalarProperty Name="bcnbusid" ColumnName="bcnbusid" />
+                <ScalarProperty Name="bcnconid" ColumnName="bcnconid" />
+                <ScalarProperty Name="bcnactive" ColumnName="bcnactive" />
+                <ScalarProperty Name="bcnbegindate" ColumnName="bcnbegindate" />
+                <ScalarProperty Name="bcnenddate" ColumnName="bcnenddate" />
+                <ScalarProperty Name="bcnnotes" ColumnName="bcnnotes" />
+                <ScalarProperty Name="bcnudf_text1" ColumnName="bcnudf_text1" />
+                <ScalarProperty Name="bcnudf_text2" ColumnName="bcnudf_text2" />
+                <ScalarProperty Name="bcnudf_text3" ColumnName="bcnudf_text3" />
+                <ScalarProperty Name="bcnudf_text4" ColumnName="bcnudf_text4" />
+                <ScalarProperty Name="bcnudf_text5" ColumnName="bcnudf_text5" />
+                <ScalarProperty Name="bcnudf_integer1" ColumnName="bcnudf_integer1" />
+                <ScalarProperty Name="bcnudf_integer2" ColumnName="bcnudf_integer2" />
+                <ScalarProperty Name="bcnudf_integer3" ColumnName="bcnudf_integer3" />
+                <ScalarProperty Name="bcnudf_integer4" ColumnName="bcnudf_integer4" />
+                <ScalarProperty Name="bcnudf_integer5" ColumnName="bcnudf_integer5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contract">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.contract">
+              <MappingFragment StoreEntitySet="contract">
+                <ScalarProperty Name="conid" ColumnName="conid" />
+                <ScalarProperty Name="conname" ColumnName="conname" />
+                <ScalarProperty Name="conshortdescr" ColumnName="conshortdescr" />
+                <ScalarProperty Name="conlongdescr" ColumnName="conlongdescr" />
+                <ScalarProperty Name="conprice" ColumnName="conprice" />
+                <ScalarProperty Name="conactive" ColumnName="conactive" />
+                <ScalarProperty Name="concreateday" ColumnName="concreateday" />
+                <ScalarProperty Name="conupdateday" ColumnName="conupdateday" />
+                <ScalarProperty Name="conendday" ColumnName="conendday" />
+                <ScalarProperty Name="conudf_text1" ColumnName="conudf_text1" />
+                <ScalarProperty Name="conudf_text2" ColumnName="conudf_text2" />
+                <ScalarProperty Name="conudf_text3" ColumnName="conudf_text3" />
+                <ScalarProperty Name="conudf_text4" ColumnName="conudf_text4" />
+                <ScalarProperty Name="conudf_text5" ColumnName="conudf_text5" />
+                <ScalarProperty Name="conudf_integer1" ColumnName="conudf_integer1" />
+                <ScalarProperty Name="conudf_integer2" ColumnName="conudf_integer2" />
+                <ScalarProperty Name="conudf_integer3" ColumnName="conudf_integer3" />
+                <ScalarProperty Name="conudf_integer4" ColumnName="conudf_integer4" />
+                <ScalarProperty Name="conudf_integer5" ColumnName="conudf_integer5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customer">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="cusid" ColumnName="cusid" />
+                <ScalarProperty Name="cusbusid" ColumnName="cusbusid" />
+                <ScalarProperty Name="cusname" ColumnName="cusname" />
+                <ScalarProperty Name="cuslastname" ColumnName="cuslastname" />
+                <ScalarProperty Name="cusphone" ColumnName="cusphone" />
+                <ScalarProperty Name="cusemail" ColumnName="cusemail" />
+                <ScalarProperty Name="cusudf_text1" ColumnName="cusudf_text1" />
+                <ScalarProperty Name="cusudf_text2" ColumnName="cusudf_text2" />
+                <ScalarProperty Name="cusudf_text3" ColumnName="cusudf_text3" />
+                <ScalarProperty Name="cusudf_text4" ColumnName="cusudf_text4" />
+                <ScalarProperty Name="cusudf_text5" ColumnName="cusudf_text5" />
+                <ScalarProperty Name="cusudf_integer1" ColumnName="cusudf_integer1" />
+                <ScalarProperty Name="cusudf_integer2" ColumnName="cusudf_integer2" />
+                <ScalarProperty Name="cusudf_integer3" ColumnName="cusudf_integer3" />
+                <ScalarProperty Name="cusudf_integer4" ColumnName="cusudf_integer4" />
+                <ScalarProperty Name="cusudf_integer5" ColumnName="cusudf_integer5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="executers">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.executers">
+              <MappingFragment StoreEntitySet="executers">
+                <ScalarProperty Name="exeid" ColumnName="exeid" />
+                <ScalarProperty Name="exebusid" ColumnName="exebusid" />
+                <ScalarProperty Name="exename" ColumnName="exename" />
+                <ScalarProperty Name="exelastname" ColumnName="exelastname" />
+                <ScalarProperty Name="execalenar" ColumnName="execalenar" />
+                <ScalarProperty Name="exeudf_text1" ColumnName="exeudf_text1" />
+                <ScalarProperty Name="exeudf_text2" ColumnName="exeudf_text2" />
+                <ScalarProperty Name="exeudf_text3" ColumnName="exeudf_text3" />
+                <ScalarProperty Name="exeudf_text4" ColumnName="exeudf_text4" />
+                <ScalarProperty Name="exeudf_text5" ColumnName="exeudf_text5" />
+                <ScalarProperty Name="exeudf_integer1" ColumnName="exeudf_integer1" />
+                <ScalarProperty Name="exeudf_integer2" ColumnName="exeudf_integer2" />
+                <ScalarProperty Name="exeudf_integer3" ColumnName="exeudf_integer3" />
+                <ScalarProperty Name="exeudf_integer4" ColumnName="exeudf_integer4" />
+                <ScalarProperty Name="exeudf_integer5" ColumnName="exeudf_integer5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.orders">
+              <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="ordid" ColumnName="ordid" />
+                <ScalarProperty Name="ordexeid" ColumnName="ordexeid" />
+                <ScalarProperty Name="ordbusid" ColumnName="ordbusid" />
+                <ScalarProperty Name="ordservid" ColumnName="ordservid" />
+                <ScalarProperty Name="ordcusbusid" ColumnName="ordcusbusid" />
+                <ScalarProperty Name="ordcusid" ColumnName="ordcusid" />
+                <ScalarProperty Name="ordstatus" ColumnName="ordstatus" />
+                <ScalarProperty Name="ordopendate" ColumnName="ordopendate" />
+                <ScalarProperty Name="ordopentime" ColumnName="ordopentime" />
+                <ScalarProperty Name="ordnotes" ColumnName="ordnotes" />
+                <ScalarProperty Name="ordudf_text1" ColumnName="ordudf_text1" />
+                <ScalarProperty Name="ordudf_text2" ColumnName="ordudf_text2" />
+                <ScalarProperty Name="ordudf_text3" ColumnName="ordudf_text3" />
+                <ScalarProperty Name="ordudf_text4" ColumnName="ordudf_text4" />
+                <ScalarProperty Name="ordudf_text5" ColumnName="ordudf_text5" />
+                <ScalarProperty Name="ordudf_integer1" ColumnName="ordudf_integer1" />
+                <ScalarProperty Name="ordudf_integer2" ColumnName="ordudf_integer2" />
+                <ScalarProperty Name="ordudf_integer3" ColumnName="ordudf_integer3" />
+                <ScalarProperty Name="ordudf_integer4" ColumnName="ordudf_integer4" />
+                <ScalarProperty Name="ordudf_integer5" ColumnName="ordudf_integer5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="service">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.service">
+              <MappingFragment StoreEntitySet="service">
+                <ScalarProperty Name="servid" ColumnName="servid" />
+                <ScalarProperty Name="servname" ColumnName="servname" />
+                <ScalarProperty Name="servduration" ColumnName="servduration" />
+                <ScalarProperty Name="servdescr" ColumnName="servdescr" />
+                <ScalarProperty Name="servudf_text1" ColumnName="servudf_text1" />
+                <ScalarProperty Name="servudf_text2" ColumnName="servudf_text2" />
+                <ScalarProperty Name="servudf_text3" ColumnName="servudf_text3" />
+                <ScalarProperty Name="servudf_text4" ColumnName="servudf_text4" />
+                <ScalarProperty Name="servudf_text5" ColumnName="servudf_text5" />
+                <ScalarProperty Name="servudf_integer1" ColumnName="servudf_integer1" />
+                <ScalarProperty Name="servudf_integer2" ColumnName="servudf_integer2" />
+                <ScalarProperty Name="servudf_integer3" ColumnName="servudf_integer3" />
+                <ScalarProperty Name="servudf_integer4" ColumnName="servudf_integer4" />
+                <ScalarProperty Name="servudf_integer5" ColumnName="servudf_integer5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="service_executers">
+            <EntityTypeMapping TypeName="DB_9EED4C_tor4meserverModel.service_executers">
+              <MappingFragment StoreEntitySet="service_executers">
+                <ScalarProperty Name="sexexeid" ColumnName="sexexeid" />
+                <ScalarProperty Name="sexbusid" ColumnName="sexbusid" />
+                <ScalarProperty Name="sexservid" ColumnName="sexservid" />
+                <ScalarProperty Name="sexudf_text1" ColumnName="sexudf_text1" />
+                <ScalarProperty Name="sexudf_text2" ColumnName="sexudf_text2" />
+                <ScalarProperty Name="sexudf_text3" ColumnName="sexudf_text3" />
+                <ScalarProperty Name="sexudf_text4" ColumnName="sexudf_text4" />
+                <ScalarProperty Name="sexudf_text5" ColumnName="sexudf_text5" />
+                <ScalarProperty Name="sexudf_integer1" ColumnName="sexudf_integer1" />
+                <ScalarProperty Name="sexudf_integer2" ColumnName="sexudf_integer2" />
+                <ScalarProperty Name="sexudf_integer3" ColumnName="sexudf_integer3" />
+                <ScalarProperty Name="sexudf_integer4" ColumnName="sexudf_integer4" />
+                <ScalarProperty Name="sexudf_integer5" ColumnName="sexudf_integer5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="DB_9EED4C_tor4meserverModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

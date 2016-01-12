@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="abb9e25ffba34a478a64add50e46fd2e" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.C__MigrationHistory" Width="1.5" PointX="2.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.AspNetRoles" Width="1.5" PointX="5.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.AspNetUserClaims" Width="1.5" PointX="10.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.AspNetUserLogins" Width="1.5" PointX="10.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.AspNetUsers" Width="1.5" PointX="8" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.business" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.business_contract" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.contract" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.customer" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.executers" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.orders" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.service" Width="1.5" PointX="3" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_9EED4C_tor4meserverModel.service_executers" Width="1.5" PointX="5.25" PointY="16.375" IsExpanded="true" />
+        <AssociationConnector Association="DB_9EED4C_tor4meserverModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_9EED4C_tor4meserverModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_9EED4C_tor4meserverModel.FK_business_contract" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_9EED4C_tor4meserverModel.FK_business_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_9EED4C_tor4meserverModel.FK_business_executor" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_9EED4C_tor4meserverModel.FK_business_contract2" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_9EED4C_tor4meserverModel.FK_order_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_9EED4C_tor4meserverModel.FK_service_executer_execoters" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_9EED4C_tor4meserverModel.FK_service_executer_service" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_9EED4C_tor4meserverModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tor4Me.WebApi", "Tor4Me.WebApi\Tor4Me.WebApi.csproj", "{07844F08-8ACF-48E1-A30A-E3B0FC85560C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tor4Me.Services", "Tor4Me.Services\Tor4Me.Services.csproj", "{018AD5C2-017C-44C8-BA46-52A789466D48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tor4Me.Data", "Tor4Me.Data\Tor4Me.Data.csproj", "{0023A4EA-3634-4A58-90FD-16C7E627B8CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07844F08-8ACF-48E1-A30A-E3B0FC85560C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07844F08-8ACF-48E1-A30A-E3B0FC85560C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07844F08-8ACF-48E1-A30A-E3B0FC85560C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07844F08-8ACF-48E1-A30A-E3B0FC85560C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{018AD5C2-017C-44C8-BA46-52A789466D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{018AD5C2-017C-44C8-BA46-52A789466D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{018AD5C2-017C-44C8-BA46-52A789466D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{018AD5C2-017C-44C8-BA46-52A789466D48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0023A4EA-3634-4A58-90FD-16C7E627B8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0023A4EA-3634-4A58-90FD-16C7E627B8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0023A4EA-3634-4A58-90FD-16C7E627B8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0023A4EA-3634-4A58-90FD-16C7E627B8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
